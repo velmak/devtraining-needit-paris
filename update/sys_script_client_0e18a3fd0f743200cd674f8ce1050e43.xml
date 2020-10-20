@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
@@ -11,12 +11,15 @@
         <name>NeedIt onChange Example</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-   if (isLoading || newValue === '') {
+   if (isLoading) {
       return;
    }
 
-   //Type appropriate comment here, and begin script below
-   alert("You have changed the Short description from " + oldValue + " to " + newValue + ".");
+   var newValueToUse = newValue==='' ? "BLANK": newValue;
+   var oldValueToUse = oldValue==='' ? "BLANK": oldValue;
+   
+	//Type appropriate comment here, and begin script below
+   alert("You have changed the Short description from \"" + oldValueToUse + "\" to \"" + newValueToUse + "\".");
 }
 
 
@@ -36,7 +39,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_client_0e18a3fd0f743200cd674f8ce1050e43</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-09-28 15:49:33</sys_updated_on>
+        <sys_updated_on>2020-10-16 19:46:21</sys_updated_on>
         <table>x_58872_needit_needit</table>
         <type>onChange</type>
         <ui_type>0</ui_type>
